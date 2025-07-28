@@ -22,17 +22,17 @@ public static class MilitaryTimeCombinationCounter
     {
         if (string.IsNullOrEmpty(time))
             return false;
-        var hourValidationExpression = string.Format("?:[01{0}][0-9{0}]|2[0-3{0}]|\\?[0-9{0}])", Wildcard);
-        var minuteValidationExpression = string.Format("[0-5{0}][0-9{0}]", Wildcard);
-        var regex = new Regex(string.Format("^({0}:{1}$", hourValidationExpression, minuteValidationExpression));
+        var hourValidationExpression = $"?:[01{Wildcard}][0-9{Wildcard}]|2[0-3{Wildcard}]|\\?[0-9{Wildcard}])";
+        var minuteValidationExpression = $"[0-5{Wildcard}][0-9{Wildcard}]";
+        var regex = new Regex($"^({hourValidationExpression}:{minuteValidationExpression}$");
         return regex.IsMatch(time);
     }
 
     public static int CountTimeCombinations(string? time)
     {
         if (!ValidateTimeCombination(time))
-            throw new ArgumentException(string.Format(
-                "Input time does not follow the required format 'HH:mm' with '{0}' as a wildcard", Wildcard));
+            throw new ArgumentException(
+                $"Input time does not follow the required format 'HH:mm' with '{Wildcard}' as a wildcard");
 
         int numberOfHourCombinations = 1, numberOfMinuteCombinations = 1;
         char hourFirstDigit = time[0], hourSecondDigit = time[1];
