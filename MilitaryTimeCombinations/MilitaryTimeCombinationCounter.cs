@@ -27,27 +27,33 @@ public class MilitaryTimeCombinationCounter
     {
         if (!ValidateTimeCombination(time))
             throw new ArgumentException("Input time does not follow the required format 'HH:mm' with '?' as a wildcard");
-        var numberOfCombinations = 1;
-        var hourPart = time.Split(':')[0];
-        var minutePart = time.Split(':')[1];
-
-        if (hourPart.StartsWith('?'))
-            numberOfCombinations = 3;
         
-        if (hourPart.EndsWith('?'))
-            if (hourPart.StartsWith('2'))
-                numberOfCombinations = 4;
-            else if (hourPart.StartsWith('?'))
-                numberOfCombinations = 24;
-            else
-                numberOfCombinations = 10;
+        int numberOfHourCombinations =1, numberOfMinuteCombinations  = 1;
+        char hourFirstDigit = time[0], hourSecondDigit = time[1];
+        char minuteFirstDigit = time[3], minuteSecondDigit = time[4];
+        
+        if (hourFirstDigit == '?')
+            numberOfHourCombinations = 3;
+        
+        if (hourSecondDigit == '?')
+            switch (hourFirstDigit)
+            {
+                case '2':
+                    numberOfHourCombinations = 4;
+                    break;
+                case '?':
+                    numberOfHourCombinations = 24;
+                    break;
+                default:
+                    numberOfHourCombinations = 10;
+                    break;
+            }
 
-        if (minutePart.StartsWith('?'))
-            numberOfCombinations *= 6;
-       
-        if (minutePart.EndsWith('?'))
-            numberOfCombinations *= 10;
+        if (minuteFirstDigit == '?')
+            numberOfMinuteCombinations = 6;
+        if (minuteSecondDigit == '?')
+            numberOfMinuteCombinations *= 10;
 
-        return numberOfCombinations;
+        return numberOfHourCombinations * numberOfMinuteCombinations;
     }
 }
