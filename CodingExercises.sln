@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindNearestArrayElement", "FindNearestArrayElement\FindNearestArrayElement.csproj", "{23C74C59-3750-4AEE-9652-E33394B55C27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitaryTimeCombinations", "MilitaryTimeCombinations\MilitaryTimeCombinations.csproj", "{8651052F-C012-413E-941B-BEF135BC5F2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitaryTimeCombinationsTest", "MilitaryTimeCombinationsTest\MilitaryTimeCombinationsTest.csproj", "{033460AD-A3A8-4155-8B9C-2758F65EA225}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23C74C59-3750-4AEE-9652-E33394B55C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23C74C59-3750-4AEE-9652-E33394B55C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23C74C59-3750-4AEE-9652-E33394B55C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23C74C59-3750-4AEE-9652-E33394B55C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8651052F-C012-413E-941B-BEF135BC5F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8651052F-C012-413E-941B-BEF135BC5F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8651052F-C012-413E-941B-BEF135BC5F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8651052F-C012-413E-941B-BEF135BC5F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{033460AD-A3A8-4155-8B9C-2758F65EA225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{033460AD-A3A8-4155-8B9C-2758F65EA225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{033460AD-A3A8-4155-8B9C-2758F65EA225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{033460AD-A3A8-4155-8B9C-2758F65EA225}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
