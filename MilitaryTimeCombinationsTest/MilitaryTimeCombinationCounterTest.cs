@@ -6,13 +6,9 @@ using NUnit.Framework;
 [TestFixture]
 public class MilitaryTimeCombinationCounterTests
 {
-    private MilitaryTimeCombinationCounter _counter;
 
-    [SetUp]
-    public void Setup()
-    {
-        _counter = new MilitaryTimeCombinationCounter();
-    }
+
+
 
     // Functional correctness
 
@@ -26,7 +22,7 @@ public class MilitaryTimeCombinationCounterTests
     [TestCase("?3:4?", ExpectedResult = 30, Description = "Hours 03, 13, 23 (3 options) * 10 minutes = 30")]
     public int Count_WithValidPatterns_ReturnsExpectedCombinations(string pattern)
     {
-        return _counter.CountTimeCombinations(pattern);
+        return MilitaryTimeCombinationCounter.CountTimeCombinations(pattern);
     }
 
     // Invalid formats — should throw ArgumentException
@@ -39,13 +35,13 @@ public class MilitaryTimeCombinationCounterTests
     [TestCase("", Description = "empty")]
     public void Count_WithInvalidFormat_ThrowsArgumentException(string input)
     {
-        var ex = Assert.Throws<ArgumentException>(() => _counter.CountTimeCombinations(input));
+        var ex = Assert.Throws<ArgumentException>(() => MilitaryTimeCombinationCounter.CountTimeCombinations(input));
         Assert.That(ex.Message, Does.Contain("required format"));
     }
     
     [Test]
     public void Count_WithNullInput_ThrowsArgumentException()
     {
-        Assert.Throws<ArgumentException>(() => _counter.CountTimeCombinations(null));
+        Assert.Throws<ArgumentException>(() => MilitaryTimeCombinationCounter.CountTimeCombinations(null));
     }
 }
