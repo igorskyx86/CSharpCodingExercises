@@ -9,7 +9,7 @@ namespace MilitaryTimeCombinations;
 /// A '?' character in the input string can represent any digit from 0–9.
 /// </remarks>
 /// <example>
-/// var count = counter.CountTimeCombinations("1?:4?");
+/// var count = MilitaryTimeCombinationCounter.CountTimeCombinations("1?:4?");
 /// </example>
 /// <param name="time">A time string in HH:mm format, with optional '?' wildcards.</param>
 /// <returns>The number of valid military time combinations that match the pattern.</returns>
